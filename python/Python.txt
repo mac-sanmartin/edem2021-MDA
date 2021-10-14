@@ -1,0 +1,596 @@
+scripting --> creación de un scritp (archivo ejecutable)
+		.py --> archivo python
+		.js --> archivo java 
+
+nombre = "MªAngeles"
+
+saludo = f' ¡Hola {nombre} ! '
+
+print(" ¡Hola " +nombre+ "!")
+print (f'¡Hola, {nombre} !')
+print (saludo)
+
+nombre:str = "MªAngeles" 
+	para definir una variable y no cambie de tipo
+
+PARA ESCRIBIR UN COMENTARIO EN EL CÓDIGO
+
+
+'''
+esto es un comentario 
+multínea
+'''
+
+#Comentario de una línea
+
+print ("------CADENAS DE TEXTO------")
+
+'''
+TIPOS DE DATOS EN PYTHON
+'''
+#STR
+micadena: str = "Hola Mundo"
+micadena2: str = '''Hola Mundo'''
+
+primeros_dos_caracteres= micadena[0:2]
+print(f"primeros dos caracters: {primeros_dos_caracteres}")
+
+print(f'Texto Con mayúsculas: {micadena.upper()}')
+print(f'Texto capitalizado: {micadena.capitalize()}')
+print(f'Texto en minúsculas: {micadena.lower()}')
+
+'''
+BOOL
+'''
+casado: bool = False
+print (f'¿casado? {casado}')
+
+'''
+LISTAS de Datos
+'''
+
+miLista: [str] = ["Martin", "Juan", "Ana"] 
+print(miLista)
+#para mostrar los elementos de las lista sin las comas, solo los valores.
+print(*miLista)
+#extraer solo un valor de la lista
+print(miLista[2])
+
+'''
+RANGOS
+'''
+
+#lista del 1 al 10, dando un salto cada dos números
+miRango = range(1, 10, 2)
+print(miRango)
+print(*miRango)
+#rango del 1 al 10m dadno un salto cada 3 números
+miRango2 = range(1, 10, 3)
+print(*miRango2)
+#Una lista hacia atras
+miRango3 = range(10, 1, -2)
+print(*miRango3)
+
+'''
+DICCIONARIO
+'''
+persona = {
+  "nombre": "Martin",
+  "edad": 30,
+  "email": "martin@inagroup.com",
+}
+print(persona)
+#representa las variables que tenemos en cuenta, pero no los valores
+print(*persona)
+print(f'la edad de {persona["nombre"]} es {persona.get("edad")}')
+#importante fijarse en las comillas, si abrimos con comillas simples, dentro solo podemos usar las dobles
+
+misNumeros = [1,2,3,3,4,5,1,5]
+print (misNumeros)
+miSetDeNumeros = set([1,2,3,3,4,5,1,5])
+print(miSetDeNumeros)
+miOtroSetDeNumeros = {1,2,2,5,5, "a", False}
+print(miOtroSetDeNumeros)
+#sirve para eliminar datos repetidos en una lista
+miSetDeNumeros2 = set(misNumeros)
+print(miSetDeNumeros2)
+
+miSetCongelado = frozenset(misNumeros)
+
+
+#se usa cuando queremos instanciar una variable, pero no le queremos dar valor
+miValoreNone = None
+print (miValorNone)
+
+
+'''
+str
+int
+float
+complex
+list
+tuple
+range
+dict
+set
+frozenset
+bool
+bytes
+bytearray
+memoryview
+'''
+'''
+RETO1
+Operacion aritmética que que realice
+((6-2)/5)^2
+'''
+resultado_operacion: float = ((6-2)/5)**2
+print(resultado_operacion) 
+#para redondear el resultado 
+print(resultado_operacion.__round__(4))
+
+
+'''
+reto grupal
+partiendo de 
+  -cantidada invertir
+  -el interes anual
+  -el numero de años
+calcular el capital obtenido con dos deciamles y guardarlo en una variable
+'''
+inv: int = 10000
+r: float = 0.35
+n= 5
+capital_obtenido: float = (inv * (1+ r)**n)
+print(capital_obtenido)
+print(capital_obtenido.__round__(2))
+
+'''
+prodcuto de 14.99
+los que son de temporada tendran 30% de descuento
+reciba un numero de productos en temporada.
+otro numero de productos de la temporada pasada
+y aplicar el descuento para obtener el gasto
+
+'''
+p: float = 14.99
+d: float = 0.70
+productosTemporada = int(input ("¿cuantos productos de temporada ha comprado? " ))
+producto_fuera = int(input ("¿cuantos productos fuera de temporada has comprado? "))
+gasto = ((productosTemporada * p)* d + (producto_fuera * p))
+print(gasto.__round__(2))
+
+
+# Versión con el bucle
+
+while True:
+  year = int(input("Introduce el numero: "))
+  if (year % 4) == 0 & (year % 100 != 0 | year % 400 == 0):
+    print(f'El año {year} es bisiesto')
+    break
+  else:
+    print(f'El año {year} no es bisiesto. Vuelve a intentarlo.')
+
+
+'''
+la consola le pide al usuario
+-nombre
+-año
+-puntuacion: float [1,5]
+-director
+-genero: 
+  -comedia 
+  -drama
+  -accion
+  -terror
+se guarde en un diccionario
+'''
+'''
+- and
+- as
+- assert --> testing. Aseguro que la operación que he hecho tiene un valor correcto
+- break -->para salir de un bucle. En otro lenguaje se usa para un 
+- class -->declarar clases
+- continue -->contrario a break, continuar con el bucle
+- def -->definir una función
+- del -->
+- elif
+- else
+- except -->controlar un error
+- exec
+- finally --> se ejecuta al final
+- for
+- from --> importar cosas de otra librerio o ruta
+- global
+- if
+- import --> importar
+- in --> comprobar si un dato esta dentro de una lista...
+- is --> comparación
+- lambda -->
+- nonlocal
+- not
+- or
+- pass -->para que no se ejecute
+- raise
+- return -->
+- try --> controlar inspecciones o errores
+- while
+- with --> importar algo de forma más controlada.
+- yield -->trabajo asincrono, se ejecuta y tarda un rato en terminar. controlar que no se ejecute antes de tiempo
+- True
+- False
+- None
+'''
+
+operacion_compleja = 33 * 10 + 2 / 5 ** 2
+print(f">Operación 33*10+2/5**2 ={operacion_compleja}")
+operacion_compleja_2 = (33 * 10) + (2 / (5 ** 2))
+print(f"> Operación (33*10)+(2/(5**2)) = {operacion_compleja_2}")
+
+nombre: str = "Martín"
+apellidos: str = "San José de Vicente" 
+ # Concatenación
+nombre_completo: str = nombre + " " + apellidos
+print(f"> Nombre completo: {nombre_completo}")  
+ # Repetición
+nombre_x5: str = nombre*5
+print(f"> Nombre 5 veces: {nombre_x5}")
+
+c: int = 3
+d: int = 3
+e: int = 4
+
+#igualdad, nos devolvera True or False
+print (f"> ¿3 y 3 son iguales? {c is d}") # Operador Identidad
+print(f"> ¿3 y 3 son iguales? {c == d}")
+print(f"> ¿3 y 4 son iguales? {c is e}") # Operador Identidad
+# Desigualdad - Nos devolverá True o False
+print(f"> ¿3 y 3 no son iguales? {c is not d}") # Operador Identidad
+print(f"> ¿3 y 4 no son iguales? {c is not e}") # Operador Identidad
+print(f"> ¿3 y 3 no son iguales? {c != d}")
+# Mayor Qué / Mayor o Igual qué
+print(f"¿3 mayor que 2? {3 > 2}")
+print(f"¿2 mayor que 3? {2 > 3}")
+print(f"¿3 mayor o igual que 3? {3 >= 3}")
+# Menor Qué / Menor o Igual qué
+print(f"> ¿2 menor que 3? {2 < 3}")
+print(f"> ¿3 menor que 2? {3 < 2}")
+print(f"> ¿3 menor o igual que 3? {3 <= 2}")
+
+# And (y)
+print(f"> Verdadero y Verdadero = {True and True}")
+print(f"> Verdadero y Falso = {True and False}")
+print(f"> Verdadero y 1 = {True and 1}")
+print(f"> Falso y Falso = {False and False}")
+print(f"> Falso y 0 = {False and 0}") #0 es false
+print(f"> Falso y None = {False and None}")
+
+# Or (ó)
+print(f"> Verdadero o Verdadero = {True or True}")
+print(f"> Verdadero o Falso = {True or False}")#el orden importa
+print(f"> Falso o False = {False or False}")
+
+# Not ( Lo contrario )
+print(f"> Not Verdadero = {not True}")
+print(f"> Not Falso = {not False}")
+print(f"> Not Falso o Verdadero = {not (False or True)}")
+
+#in 
+mi_texto:str = "Lorem ipsum dolor sit amet consectetur adipiscing elit dui odio"
+mi_sub_texto: str = "amet"
+mi_otro_sub_texto: str = "pepito"
+# Pertenece. Deveulve un booleano
+print(f"> ¿amet está dentro del mi_texto?: {mi_sub_texto in mi_texto}")
+# No Pertenece
+print(f"> ¿pepito no está dentro de mi_texto?: {mi_otro_sub_texto not in mi_texto}")
+
+
+# Suma
+puntos_obtenidos = puntos_obtenidos + 1
+print(f"> Has conseguido un punto. Ahora tienes: {puntos_obtenidos}")
+# Suma
+puntos_obtenidos += 1
+print(f"> Has conseguido otro punto. Ahora tienes: {puntos_obtenidos}")
+
+'''
+En Python, la estructura es con "elif" y no con "else if"
+''' 
+miEdad = int (input("edad:"))
+if (miEdad >= 60):    
+  print('Apuntarse al gym')
+elif (miEdad < 60 and miEdad > 30):    
+  print ('Adulto maduro')
+elif (miEdad == 30):    
+  print ('Adulto en su sweet moment')
+elif (miEdad < 30 and miEdad >= 18):    
+  print ('Adulto joven, todo en orden')
+else:    
+  print ('¡A clase!')
+
+#for in
+
+lista = [1,2,3,4,5,6,7,8] 
+for elemento in lista:    
+  if(elemento % 2 == 0):        
+    print(f'{elemento} es par')    
+  else:        
+    print(f'{elemento} es impar')
+
+lista = [1,2,3,4,5,6,7,8] 
+for elemento in lista:    
+  if(elemento % 2 == 0):        
+    print(f'{elemento} es par')    
+  else:        
+    print(f'{elemento} es impar')
+    break #el break paraliza el bucle en el que estamos. cuando llega al 1 se para y el último elemento que se ha imprimido es el 1
+print (elemento) #fuera del for elemento corresponde al último valor que se le ha dado dentro de la función.
+
+
+
+
+lista = [1,2,3,4,5,6,7,8] 
+# Bucle WHILE para encontrar eliminar elementos hasta que la longitud sea 3
+while (len(lista) > 3):    
+  lista.pop() #si no le ponemos nada eliminia el útlimo elemento de la lista, borra por ínidice, posición  
+  print(lista)
+
+
+'''
+# ¡Bucle INFINITO! Mucho cuidado
+suma: int = 0
+while True:    
+  suma+=1    
+  print(suma)
+  '''
+  # Python NO CUENTA con bucles DO - WHILE, pero se pueden simular:
+i = 1   
+while True:      
+  print(i)      
+  i = i + 1      
+  if(i > 5):          
+    break
+
+
+# Función Básica
+def miFuncion():  
+  print(f"Esto es una función básica") 
+  #contenido de la función
+  
+miFuncion() #llamado y ejecutando la función. si no ponemos esto no se ejecuta el codigo programdo dentro de la funcion
+
+
+# Función con Parámetros No Tipados
+def miFuncionConParametros(a,b):
+    print(f"¡{a}, {b}!")
+ 
+ 
+# llamando la función y pasándole algunos parámetros
+miFuncionConParametros('Hola', 'Mundo')
+
+# Función con Parámetros No Tipados
+def miFuncionConParametros(a,b):
+    print(f"¡{a}, {b}!")
+ 
+ 
+# llamando la función y pasándole algunos parámetros
+miFuncionConParametros('Hola', 'Mundo')
+miFuncionConParametros('Adios', 'Mundo') #se ejecuta dos veces
+
+# Función con Parámetros No Tipados
+def miFuncionConParametros(a,b):
+    print(f"¡{a}, {b}!")
+ 
+ 
+# llamando la función y pasándole algunos parámetros
+miFuncionConParametros('Hola', 'Mundo')
+miFuncionConParametros('Adios', 'Mundo') #se ejecuta dos veces
+miFuncionConParametros(1, 2) #como los datos no estan tipados puedes poner cualquier tipo de dato
+
+# Función con Parámetros No Tipados
+def miFuncionConParametros(a,b):
+    print(f"{a + b}!")
+ 
+# llamando la función y pasándole algunos parámetros
+miFuncionConParametros('Hola', 'Mundo')
+miFuncionConParametros('Adios', 'Mundo') #se ejecuta dos veces
+miFuncionConParametros(1, 2) #como los datos no estan tipados puede tratar los datos de forma erronea
+
+
+# Función con Parámetros Tipados
+def miFuncionConParametrosTipados(a: str, b: str) :
+    print(f"¡{a}, {b}!")
+ 
+ 
+# llamando la función y pasándole algunos
+# parámetros tipados
+miFuncionConParametrosTipados('Hola', 'Mundo')
+miFuncionConParametrosTipados (1,2) #toma los números como texto
+
+# Función con parámetros por defecto
+# Si un valor no viene, se pone por defecto
+def miFuncionConParametrosPorDefecto(a, b = 1) :
+    print(f"La división es {a/b}")
+ 
+ 
+# llamando la función y pasándole los dos parámetros
+miFuncionConParametrosPorDefecto(3, 4)
+# llamando la función y pasándole un único parámetro
+miFuncionConParametrosPorDefecto(3)
+#si no estas seguro del orden de los parametros puedes asignarles un valor independientemente del orden
+miFuncionConParametrosPorDefecto(b=4 , a=3)
+
+	
+# Función con muchos parámetros
+def miFuncionConMultiplesParametros(*elementos) :
+    for elemento in elementos:
+        print(f"Elemento: {elemento}")
+ 
+# llamando la función y pasándole una lista de parámetros
+lista: [int] = [10, 9, 8 ,7]
+miFuncionConMultiplesParametros(*lista)
+miFuncionConMultiplesParametros(1,2,3,4,5)
+miFuncionConMultiplesParametros(1,2,3,4)
+
+
+
+# Función con Retorno
+def miFuncionConRetorno():
+    return '¡Hola, Mundo!'
+ 
+# llamando, ejecutando y almacenando el retorno en una variable
+# la variable hola_mundo acabará valiendo "¡Hola, Mundo!"
+hola_mundo = miFuncionConRetorno()
+print(hola_mundo)
+
+
+
+# Función con Retorno Tipado
+def miFuncionConRetornoTipado(*elementos) -> int :
+    # Inicializamos la variable suma a 0 para incrementarla después
+    suma: int = 0
+ 
+    # iteramos sobre los elementos y los vamos sumando uno a uno
+    # los guardamos en la variable suma que se va incrementando
+    for elemento in elementos:
+        print(f"Elemento: {elemento}")
+        suma += elemento
+ 
+    return suma
+ 
+# llamar, pasarle la lista, ejecutar y almacenar la suma del retorno
+# en la variable sumatorio
+lista_numeros = [1, 2, 3, 4, 5, 6]
+sumatorio = miFuncionConRetornoTipado(lista_numeros)
+print(f"EL sumatorio total es: {sumatorio}")
+#da error porque la lista no esta intireda
+
+
+
+# Función con Retorno Tipado
+def miFuncionConRetornoTipado(*elementos) -> int :
+    # Inicializamos la variable suma a 0 para incrementarla después
+    suma: int = 0
+ 
+    # iteramos sobre los elementos y los vamos sumando uno a uno
+    # los guardamos en la variable suma que se va incrementando
+    for elemento in elementos:
+        print(f"Elemento: {elemento}")
+        suma += elemento
+ 
+    return suma
+ 
+# llamar, pasarle la lista, ejecutar y almacenar la suma del retorno
+# en la variable sumatorio
+lista_numeros = [1, 2, 3, 4, 5, 6]
+sumatorio = miFuncionConRetornoTipado(*lista_numeros)
+print(f"EL sumatorio total es: {sumatorio}")
+
+
+''' PASO POR REFERENCIA
+Paso de parámetros por Referencia
+ 
+Los valores simples se pasan, por defecto, por valor
+Los valores complejos se pasan, por defecto, por referencia
+ 
+'''
+ 
+# las listas al ser complejos se pasan por referencia
+# Esto quiere decir que si la función edita el parámetro,
+# éste se edita también en origen
+ 
+def doblar_valores(numeros):
+    for i,n in enumerate(numeros):
+        numeros[i] *= 2#Accede a la posicion 0, 1 ,2
+	
+# definiendo una variable que se va a pasar por referencia
+ns = [10,50,100]
+doblar_valores(ns)
+print(f"Lista Original Modificada: {ns}") #[20, 100, 200]
+
+	
+# SI NO QUEREMOS PASAR UNA LISTA COMO REFERENCIA, DEBEMOS REALIZAR UNA COPIA "AL VUELO"
+# Ahora esta no se pasará por referencia, ya que haremos una copia del valor
+ns = [10,50,100]
+doblar_valores(ns[:])  # Una copia al vuelo de una lista se realiza con [:]
+# Esto hace que la lista original no se vea modificada
+print(f"Lista Original No Modificada: {ns}") #[10, 50, 100]
+
+# Para aquellos tipos de datos simples, si queremos el mismo comportamiento
+# de paso por referencia podemos:
+ 
+# SOBRESCRIBIR EL VALOR ORIGINAL CON EL VALOR DE RETURN DE LA FUNCIÓN
+def doblar_valor(numero):
+    return numero * 2
+ 
+n = 10
+n = doblar_valor(n)
+print(f"Valor original Modificado: {n}")
+
+
+''' FUNCIONES LAMBDA:
+ 
+Las funciones Lambda de Python son bastante habituales.
+ 
+'''
+ 
+al_cuadrado = lambda a: a**2
+ 
+# llamando a la función lambda
+print(al_cuadrado(2)) # imprimirá un 4
+
+
+
+'''
+FECHA
+'''
+
+import datetime
+
+import time
+
+import calendar #escoger elementos de un calendario
+
+import locale #elegir el idioma
+
+#locale.setlocale(locale.LC_ALL, "es_ES")
+
+
+print ("fecha y hora actual:", datetime.datetime.now())
+
+print("fecha actual", datetime.date.today())
+
+print("Año actual", datetime.date.today().strftime("%y"))#año 21
+print("mes actual", datetime.date.today().strftime("%B"))#el nombre del mes actual
+print("mes actual", datetime.date.today().strftime("%m"))#número del mes actual
+print("numero de la semana del año", datetime.date.today().strftime("%W"))#número de semana
+print("dia del año", datetime.date.today().strftime("%j"))#número de dia
+print("dia del mes", datetime.date.today().strftime("%d"))#número de dia del mes
+print("dia de la semana", datetime.date.today().strftime("%A"))#número de dia de la semana
+
+
+
+print("Mes:", calendar.month_name[10])#ponemos corchetes porque pretence a una lista
+print("2020 es bisiesto?", calendar.isleap(2020))#ponemos parentesis porque corresponde a una funcon con un parámetro (2020)
+print("dia:", calendar.day_name[0])
+
+ahora = datetime.datetime.now()#una fecha
+
+timeStamp = time.mktime(ahora.timetuple())
+print("timeStamp", timeStamp)
+
+# formato de timeStamp legible
+print("fecha legible:", datetime.datetime.fromtimestamp(timeStamp).strftime("%Y-%m-%d %H:%M:%S"))
+
+miFecha = "02/10/2021"
+nuevoTimeStamp = time.mktime(datetime.datetime.strptime(miFecha, "%d/%m/%Y").timetuple())
+
+print("fecha legible:", datetime.datetime.fromtimestamp(nuevoTimeStamp).strftime("%Y-%m-%d"))
+
+
+
+
+precios = [("Producto A", "12.20"),("Producto B", "15.10"),("Producto C", "24.50")]
+
+print(sorted(precios, key=lambda x: float(x[1]), reverse=True))#estamos ordenando la tupla acorde con los precios. el sorted toma cada vez un valor que equivale a x que equivale al primer prodcuto con el precio la primera vez, el segundo la segunda vez y el tercero la tercera vez
+
+g
