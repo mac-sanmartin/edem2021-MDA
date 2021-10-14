@@ -592,5 +592,3 @@ print("fecha legible:", datetime.datetime.fromtimestamp(nuevoTimeStamp).strftime
 precios = [("Producto A", "12.20"),("Producto B", "15.10"),("Producto C", "24.50")]
 
 print(sorted(precios, key=lambda x: float(x[1]), reverse=True))#estamos ordenando la tupla acorde con los precios. el sorted toma cada vez un valor que equivale a x que equivale al primer prodcuto con el precio la primera vez, el segundo la segunda vez y el tercero la tercera vez
-
-g
